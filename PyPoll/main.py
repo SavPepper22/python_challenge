@@ -55,23 +55,23 @@ winner = max(candidate_vote, key = candidate_vote.get)
 print(f"Winner: {winner}")
 
 #Now make a new text file and print our results.
+with open("output.txt", 'w+') as f:
 
-f = open("election_results.txt", "w")
-f.write("Election Results")
-f.write("\n")
-f.write("---------------------")
-f.write("\n")
-f.write(f"Total Votes : {str(total_votes)}")
-f.write("\n")
-f.write("---------------------")
-f.write("\n")
-    
-for candidate, votes in candidate_vote.items():
-    f.write(candidate + ":" + "{:.3%}". format(votes/total_votes) + " (" + str(votes) + ")")
+    f.write("Election Results")
     f.write("\n")
-f.write("---------------------")
-f.write("\n")
-winner = max(candidate_vote, key = candidate_vote.get)
-f.write(f"Winner: {winner}")
-f.write("\n")
-f.write("---------------------")
+    f.write("---------------------")
+    f.write("\n")
+    f.write(f"Total Votes : {str(total_votes)}")
+    f.write("\n")
+    f.write("---------------------")
+    f.write("\n")
+        
+    for candidate, votes in candidate_vote.items():
+        f.write(candidate + ":" + "{:.3%}". format(votes/total_votes) + " (" + str(votes) + ")")
+        f.write("\n")
+    f.write("---------------------")
+    f.write("\n")
+    winner = max(candidate_vote, key = candidate_vote.get)
+    f.write(f"Winner: {winner}")
+    f.write("\n")
+    f.write("---------------------")

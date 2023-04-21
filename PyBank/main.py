@@ -55,20 +55,21 @@ print(f"Greatest Increase in Profits:{date[month_increase]} (${str(increase)})")
 print(f"Greatest Increease in Profits:{date[month_decrease]} (${str(decrease)})")
 
 # Ok now we are going to  make a text file.
-f = open("financial_analysis", "w")
-f.write(f"Financial Analysis")
-f.write("\n")
-f.write("-------------------------")
-f.write("\n")
-f.write(f'Total Months : {str(len(date))}')
-f.write("\n")
-f.write(f"Total: ${str(total_profit)}")
-f.write("\n")
-f.write(f"Average Change: ${str(round(avg_change,2))}")
-f.write("\n")
-f.write(f"Greatest Increase in Profits:{date[month_increase]} (${str(increase)})")
-f.write("\n")
-f.write(f"Greatest Increease in Profits:{date[month_decrease]} (${str(decrease)})")
+with open("output.txt", 'w+') as f:
+
+    f.write(f"Financial Analysis")
+    f.write("\n")
+    f.write("-------------------------")
+    f.write("\n")
+    f.write(f'Total Months : {str(len(date))}')
+    f.write("\n")
+    f.write(f"Total: ${str(total_profit)}")
+    f.write("\n")
+    f.write(f"Average Change: ${str(round(avg_change,2))}")
+    f.write("\n")
+    f.write(f"Greatest Increase in Profits:{date[month_increase]} (${str(increase)})")
+    f.write("\n")
+    f.write(f"Greatest Increease in Profits:{date[month_decrease]} (${str(decrease)})")
 
 
 
